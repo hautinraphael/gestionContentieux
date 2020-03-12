@@ -30,10 +30,10 @@ public class Tache implements Serializable {
 	private Affaire affaire;
 	@ManyToOne(fetch=FetchType.EAGER)
 	private Tribunal tribunal;
-	@OneToMany (mappedBy="tache", fetch=FetchType.EAGER)
-	private Set<Phase> phases = new HashSet<>();
 	@ManyToOne(fetch=FetchType.EAGER)
 	private Utilisateur utilisateur;
+	@OneToMany (mappedBy="tache", fetch=FetchType.EAGER)
+	private Set<Phase> phases = new HashSet<>();
 	
 	public Tache() {
 	}

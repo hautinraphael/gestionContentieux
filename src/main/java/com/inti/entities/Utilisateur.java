@@ -43,9 +43,9 @@ public class Utilisateur implements Serializable {
 	@Lob
 	private byte[] image;
 	@OneToMany (mappedBy="utilisateur", fetch=FetchType.EAGER)
-	private Tache taches;
+	private Set<Tache> taches = new HashSet<>();
 	@OneToMany (mappedBy="utilisateur", fetch=FetchType.EAGER)
-	private Tiers tierss;
+	private Set<Tiers> tierss = new HashSet<>();
 	@ManyToMany
 	@JoinTable(name="profil", joinColumns= {@JoinColumn(name="id_utilisateur", 
 			referencedColumnName="idUtilisateur")},
@@ -72,11 +72,11 @@ public class Utilisateur implements Serializable {
 		this.telUtilisateur = telUtilisateur;
 	}
 
-	public Tiers getTierss() {
+	public Set<Tiers> getTierss() {
 		return tierss;
 	}
 
-	public void setTierss(Tiers tierss) {
+	public void setTierss(Set<Tiers> tierss) {
 		this.tierss = tierss;
 	}
 
@@ -184,11 +184,11 @@ public class Utilisateur implements Serializable {
 		this.adresseUtilisateur = adresseUtilisateur;
 	}
 
-	public Tache getTaches() {
+	public Set<Tache> getTaches() {
 		return taches;
 	}
 
-	public void setTaches(Tache taches) {
+	public void setTaches(Set<Tache> taches) {
 		this.taches = taches;
 	}
 
