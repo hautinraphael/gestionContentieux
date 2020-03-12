@@ -43,11 +43,14 @@ public class UtilisateurController {
 		currentUtilisateur.setPrenomUtilisateur(user.getPrenomUtilisateur());
 		currentUtilisateur.setUsername(user.getUsername());
 		currentUtilisateur.setPassword(user.getPassword());
+		currentUtilisateur.setVilleUtilisateur(user.getVilleUtilisateur());
+		currentUtilisateur.setAdresseUtilisateur(user.getAdresseUtilisateur());
 		currentUtilisateur.setNomCabinet(user.getNomCabinet());
 		currentUtilisateur.setTelUtilisateur(user.getTelUtilisateur());
+		currentUtilisateur.setAdmin(user.isAdmin());
 		currentUtilisateur.setDateAjout(user.getDateAjout());
 		currentUtilisateur.setImage(user.getImage());
-		currentUtilisateur.setTache(user.getTache());
+		currentUtilisateur.setTaches(user.getTaches());
 		currentUtilisateur.setTierss(user.getTierss());
 		currentUtilisateur.setRoles(user.getRoles());
 		return userService.save(currentUtilisateur);

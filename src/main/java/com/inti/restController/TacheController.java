@@ -45,7 +45,7 @@ public class TacheController {
 		currentTache.setDescriptionTache(tache.getDescriptionTache());
 		currentTache.setStatutAudience(tache.getStatutAudience());
 		currentTache.setAffaire(tache.getAffaire());
-		currentTache.setTribunaux(tache.getTribunaux());
+		currentTache.setTribunal(tache.getTribunal());
 		currentTache.setPhases(tache.getPhases());
 		currentTache.setUtilisateur(tache.getUtilisateur());
 		return tacheService.save(currentTache);

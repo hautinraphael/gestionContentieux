@@ -29,7 +29,7 @@ public class Tache implements Serializable {
 	@ManyToOne(fetch=FetchType.EAGER)
 	private Affaire affaire;
 	@ManyToOne(fetch=FetchType.EAGER)
-	private Tribunal tribunaux;
+	private Tribunal tribunal;
 	@OneToMany (mappedBy="tache", fetch=FetchType.EAGER)
 	private Set<Phase> phases = new HashSet<>();
 	@ManyToOne(fetch=FetchType.EAGER)
@@ -93,12 +93,12 @@ public class Tache implements Serializable {
 		this.affaire = affaire;
 	}
 
-	public Tribunal getTribunaux() {
-		return tribunaux;
+	public Tribunal getTribunal() {
+		return tribunal;
 	}
 
-	public void setTribunaux(Tribunal tribunaux) {
-		this.tribunaux = tribunaux;
+	public void setTribunal(Tribunal tribunal) {
+		this.tribunal = tribunal;
 	}
 
 	public Set<Phase> getPhases() {

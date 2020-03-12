@@ -32,15 +32,18 @@ public class Utilisateur implements Serializable {
 	@Column(unique=true)	
 	private String username;
 	private String password;
+	private String villeUtilisateur;
+	private String adresseUtilisateur;
 	private String nomCabinet;
 	private Double telUtilisateur;
+	private boolean admin;
 	private boolean enabled = true;
 	@Temporal(TemporalType.DATE)
 	private Date dateAjout;
 	@Lob
 	private byte[] image;
 	@OneToMany (mappedBy="utilisateur", fetch=FetchType.EAGER)
-	private Tache tache;
+	private Tache taches;
 	@OneToMany (mappedBy="utilisateur", fetch=FetchType.EAGER)
 	private Tiers tierss;
 	@ManyToMany
@@ -117,14 +120,20 @@ public class Utilisateur implements Serializable {
 		this.password = password;
 	}
 
-	
-
 	public boolean isEnabled() {
 		return enabled;
 	}
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
 	}
 
 	public String getNomCabinet() {
@@ -159,12 +168,28 @@ public class Utilisateur implements Serializable {
 		this.roles = roles;
 	}
 
-	public Tache getTache() {
-		return tache;
+	public String getVilleUtilisateur() {
+		return villeUtilisateur;
 	}
 
-	public void setTache(Tache tache) {
-		this.tache = tache;
+	public void setVilleUtilisateur(String villeUtilisateur) {
+		this.villeUtilisateur = villeUtilisateur;
+	}
+
+	public String getAdresseUtilisateur() {
+		return adresseUtilisateur;
+	}
+
+	public void setAdresseUtilisateur(String adresseUtilisateur) {
+		this.adresseUtilisateur = adresseUtilisateur;
+	}
+
+	public Tache getTaches() {
+		return taches;
+	}
+
+	public void setTaches(Tache taches) {
+		this.taches = taches;
 	}
 
 	@Override
