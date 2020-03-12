@@ -117,6 +117,8 @@ public class Utilisateur implements Serializable {
 		this.password = password;
 	}
 
+	
+
 	public boolean isEnabled() {
 		return enabled;
 	}

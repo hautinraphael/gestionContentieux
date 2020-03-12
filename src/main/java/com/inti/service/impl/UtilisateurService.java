@@ -26,19 +26,16 @@ public class UtilisateurService implements IUtilisateurService {
 
 	@Override
 	public Utilisateur save(Utilisateur user) {
-
 		return utilisateurRepository.save(user);
 	}
 
 	@Override
 	public void delete(Long id) {
 		utilisateurRepository.delete(id);
-
 	}
 
 	@Override
 	public Utilisateur findOneByUsername(String username) {
-		
 		return utilisateurRepository.findOneByUsername(username);
 	}
 
