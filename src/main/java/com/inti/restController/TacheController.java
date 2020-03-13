@@ -42,7 +42,8 @@ public class TacheController {
 	@RequestMapping(value = "taches/{idTache}", method = RequestMethod.PUT)
 	public Tache updateTache(@PathVariable("idTache") Long id, @RequestBody Tache tache) {
 		Tache currentTache = tacheService.findOne(id);
-		currentTache.setDateCreationTache(tache.getDateCreationTache());
+		currentTache.setDateDebutTache(tache.getDateDebutTache());
+		currentTache.setDateFinTache(tache.getDateFinTache());
 		currentTache.setTitreTache(tache.getTitreTache());
 		currentTache.setDescriptionTache(tache.getDescriptionTache());
 		currentTache.setStatutAudience(tache.getStatutAudience());

@@ -22,7 +22,9 @@ public class Tache implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idTache;
 	@Temporal(TemporalType.DATE)
-	private Date dateCreationTache;
+	private Date dateDebutTache;
+	@Temporal(TemporalType.DATE)
+	private Date dateFinTache;
 	private String titreTache;
 	private String descriptionTache;
 	private Boolean statutAudience;
@@ -38,11 +40,11 @@ public class Tache implements Serializable {
 	public Tache() {
 	}
 
-	public Tache(Date dateCreationTache, String titreTache, String descriptionTache, Boolean statutAudience) {
-		this.dateCreationTache = dateCreationTache;
+	public Tache(Date dateDebutTache, Date dateFinTache, String titreTache, String descriptionTache) {
+		this.dateDebutTache = dateDebutTache;
+		this.dateFinTache = dateFinTache;
 		this.titreTache = titreTache;
 		this.descriptionTache = descriptionTache;
-		this.statutAudience = statutAudience;
 	}
 
 	public Long getIdTache() {
@@ -51,14 +53,6 @@ public class Tache implements Serializable {
 
 	public void setIdTache(Long idTache) {
 		this.idTache = idTache;
-	}
-
-	public Date getDateCreationTache() {
-		return dateCreationTache;
-	}
-
-	public void setDateCreationTache(Date dateCreationTache) {
-		this.dateCreationTache = dateCreationTache;
 	}
 
 	public String getTitreTache() {
@@ -117,11 +111,28 @@ public class Tache implements Serializable {
 		this.utilisateur = utilisateur;
 	}
 
+	public Date getDateDebutTache() {
+		return dateDebutTache;
+	}
+
+	public void setDateDebutTache(Date dateDebutTache) {
+		this.dateDebutTache = dateDebutTache;
+	}
+
+	public Date getDateFinTache() {
+		return dateFinTache;
+	}
+
+	public void setDateFinTache(Date dateFinTache) {
+		this.dateFinTache = dateFinTache;
+	}
+
 	@Override
 	public String toString() {
-		return "Tache [dateCreationTache=" + dateCreationTache + ", titreTache=" + titreTache + ", descriptionTache="
-				+ descriptionTache + ", statutAudience=" + statutAudience + "]";
+		return "Tache [dateDebutTache=" + dateDebutTache + ", dateFinTache=" + dateFinTache + ", titreTache="
+				+ titreTache + ", descriptionTache=" + descriptionTache + "]";
 	}
+
 	
 	
 
