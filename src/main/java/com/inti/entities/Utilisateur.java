@@ -46,7 +46,7 @@ public class Utilisateur implements Serializable {
 	private Set<Tache> taches = new HashSet<>();
 	@OneToMany (mappedBy="utilisateur", fetch=FetchType.EAGER)
 	private Set<Tiers> tierss = new HashSet<>();
-	@ManyToMany
+	@ManyToMany (fetch=FetchType.EAGER)
 	@JoinTable(name="profil", joinColumns= {@JoinColumn(name="id_utilisateur", 
 			referencedColumnName="idUtilisateur")},
 			inverseJoinColumns= {@JoinColumn(name="id_role", table="role", 
